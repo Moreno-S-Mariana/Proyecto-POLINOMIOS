@@ -328,12 +328,6 @@ polinomio pol_division_binomio (polinomio p1 , polinomio p0)
 }
 
 
-/*
- * 
- * ORDENAMIENTO BURBUJA
- * 
- */
-
 /**
  * 
  * @brief: función que hace uso del ordenamiento por burbuja 
@@ -362,6 +356,15 @@ void burbuja (polinomio p)
     }
     return p; 
 }
+
+/**
+ * @brief: Funcion para iniciar memoria
+ * 
+ * @programador: Todos
+ * 
+ * @fecha: 14/12/2021
+ * 
+ * */
 
 void iniciar_memoria ()
 {
@@ -416,14 +419,12 @@ void mostrar_polinomio (int i)
     imprimir_polinomio(memoria_principal.datos[i]) ;
 }
 
-// de polinomio  dame su numero de terminos  en la linea del ciclo for
-
 void imprimir_polinomio (polinomio p)
 {
-    //flocha por que p es apuntador
+    //flecha por que p es apuntador
     for (int i=0; i < p.numTerm ; i++)
     {
-        //punto y no flecha por que es notación de arreglos
+        //punto y no flecha por que es notación de arreglos 
         printf ("%f x ^ %i ", p.terminos[i].coef , p.terminos[i].exp );
     }
     printf("\n");
@@ -443,7 +444,62 @@ void mostrar_polinomio (int i )
 {
     imprimir_polinomio (memoria_principal.datos[i]);
 }
-polinomio leer_polinomio()
+
+polinomio leer_polinomio(polinomio p0, polinomio p1)
+{
+    if (in_file )
+    {
+        fscanf (in_file, "%s \t %s", & p0, p1);
+    }
+    else
+    {
+        printf("No tienes nungún archivo abierto \n");
+    }
+}
+
+void open_in_file (char *filename)
+{
+    in_file= open (filename, "r");
+    if (!in_file)
+    {
+        printf("No tienes permisos suficientes para abrir %s \n ", filename);
+    }
+}
+
+void open_out_file (char *filename )
+{
+    out_file = open (filename,"w");
+    if (!out_file)
+    {
+        printf("No tienes permisos suficientes para abrir %s \n ", filename);
+    }
+}
+
+void close_file (FILE *f)
+{
+    fclose(f);
+}
+
+void memory_write (polinomio p )
+{
+    if  ( memoria.numPol >=0 && memoria.numPol <10 )
+    {
+        memoria 
+        
+    }
+}
+
+void memory_read()
 {
 
 }
+
+
+void liberar_memoria (float **mem)
+{
+    int tam= memoria.numPol -10;
+    for (int i=0; i < tam ; i++)
+        free (mem [i]);
+        free (mem);
+}
+
