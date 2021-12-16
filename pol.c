@@ -7,9 +7,9 @@
  * 
  * @return: mustra el menú 
  * 
- * @programador: Evelyn 
+ * @programador: 
  * 
- * @modificación: 14 / 12 /2021 
+ * @fecha: 14 / 12 /2021 
  * */
 
 void menu ()
@@ -49,9 +49,9 @@ void menu ()
  * 
  * @return: un polinomio resultante 
  * 
- * @programador: Leonardo Damián
+ * @programador:
  * 
- * @modificación: 14/12/2021
+ * @fecha: 14/12/2021
  * */
 
 polinomio pol_suma (polinomio p0, polinomio p1)
@@ -111,9 +111,9 @@ polinomio pol_suma (polinomio p0, polinomio p1)
  * 
  * @return: un polinomio resultante, res 
  * 
- * @programador: Mariana 
+ * @programador: 
  * 
- * @modificación: 14/12/2021
+ * @fecha: 14/12/2021
  * */
 
 polinomio pol_resta (polinomio p0, polinomio p1)
@@ -174,11 +174,10 @@ polinomio pol_resta (polinomio p0, polinomio p1)
  * 
  * @return: un polinomio resultante , res 
  * 
- * @programador: David Farid 
+ * @programador: Mariana 
  * 
- * @modificación:14/12/2021 
+ * @fecha:14/12/2021 
  * */
-
 
 polinomio pol_multiplicacion(polinomio p0, polinomio p1)
 {
@@ -232,9 +231,9 @@ polinomio pol_multiplicacion(polinomio p0, polinomio p1)
  * 
  * @return: un polinomio resultante res 
  * 
- * @programador: Farid 
+ * @programador:
  * 
- * @modificación: 15/12/2021
+ * @fecha: 15/12/2021
  * */
 
 polinomio pol_multiplicacion_esc (float s, polinomio p0)
@@ -265,9 +264,9 @@ polinomio pol_multiplicacion_esc (float s, polinomio p0)
  * 
  * @return:un polinomio resultante, res  
  * 
- * @programador: Evelyn 
+ * @programador: 
  * 
- * @modificación: 15/12/2021
+ * @fecha: 15/12/2021
  * */
 
 
@@ -305,7 +304,7 @@ polinomio pol_division_monomio (polinomio p1 , polinomio p0)
  * 
  * @programador: Mariana 
  * 
- * @modificación: 15/12/2021
+ * @fecha: 15/12/2021
  * */
 
 polinomio pol_division_binomio (polinomio p1 , polinomio p0)
@@ -343,9 +342,9 @@ polinomio pol_division_binomio (polinomio p1 , polinomio p0)
  * 
  * @return: el polinomio p ordenado 
  * 
- * @programador: Leonarfo Dan¿mián 
+ * @programador: Mariana
  * 
- * @modificación: 15/12/2021
+ * @fecha: 15/12/2021
  * */
 
 void burbuja (polinomio p)
@@ -364,16 +363,51 @@ void burbuja (polinomio p)
     return p; 
 }
 
-polinomio leer_polinomio()
-{
-
-}
-
-
 void iniciar_memoria ()
 {
     memoria_principal.datos = (polinomio*)malloc (10 *sizeof(polinomio));
     memoria_principal.numPol= 0;
+}
+
+/**
+ * 
+ * @brief: función que lee polinomios desde el teclado
+ * 
+ * @param:un polinomio p
+ * 
+ * @programador: Mariana
+ * 
+ * @fecha: 16/12/2021
+ * 
+ * */
+
+void agregar_polinomio_del_teclado ()
+{
+    polinomio p;
+    termino term;
+    int i,x;
+    if(memoria_principal.numPol < 10)
+    {
+        printf("Dame el grado del polinomio que quieres agregar:");
+        scanf("%d", &p.grado);
+        printf("Dame el numero de terminos que quieres agregar:");
+        scanf("%d", &p.numTerm);
+        for ( int aux=0; aux < p.numTerm; aux++ )
+        {
+            term = p.terminos[i];
+            printf("Dame un término:");
+            scanf("%f", & term.coef);
+            printf("Dame el exponente de el termino:");
+            scanf("%d", & term.exp);
+            i++;
+        }
+        printf("Tu polinomio es: %s ", p);
+        memoria_principal.datos[memoria_principal.numPol-1]= p;
+    }
+    else
+    {
+        printf("Ya no hay memoria disponible");
+    }
 }
 
 
@@ -396,9 +430,6 @@ void imprimir_polinomio (polinomio p)
 }
  //si el coheficiente es mayor que cero imprimo un simbolo de mas 
  //if dentro de for 
-
-
-
 void operaciones( int op, int p0, int p1)
 {
     if (memoria_principal.numPol>=10)
@@ -408,19 +439,11 @@ void operaciones( int op, int p0, int p1)
         memoria_principal.datos[memoria_principal.numPol-1]=pol_suma (memoria_principal.datos[p0], memoria_principal.datos[p1]);
     }
 }
-
-
-void agregar_polinomio_del_teclado ()
-{
-    // Verificar que en memoria_principal se pueda guardar
-    // Si no se puede guardar aumentar el tamaño
-    //crear una variable tipo polinomio asignar los valores desde el teclado(p)
-    // Asignar mamoria-principal.datos [mamoria_principal.numPol -1]=p
-}
-
-
-
 void mostrar_polinomio (int i )
 {
     imprimir_polinomio (memoria_principal.datos[i]);
+}
+polinomio leer_polinomio()
+{
+
 }

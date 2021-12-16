@@ -1,8 +1,21 @@
 #ifndef __POL_H__
 #define __POL_H__
 
-//MECANICAMO PARA AGURPAR VARIABLES DE DISTINOTS TIPOS
 
+#include <stdio.h>
+
+FILE *in_file;
+FILE *out_file;
+
+
+
+polinomio  complex_static_memory [10];
+polinomio **complex_dynamic_memory;
+polinomio countMemory;
+
+
+
+//MECANISMO PARA AGRUPAR VARIABLES DE DISTINTOS TIPOS
 struct _termino {
     float coef;
     int exp;
@@ -55,7 +68,7 @@ void liberar_memoria (polinomio);
 void burbuja (polinomio); //*
 void mostrar_polinomio (int i);
 void imprimir_polinomio (polinomio);
-void leer_polinomio ();
+void leer_polinomio (polinomio);
 void menu (); //*
 
 
