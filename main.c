@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "pol.h "
+#include "pol.c"
+
 
 int main(int argc, char * argv [])
 {
@@ -33,7 +35,6 @@ int main(int argc, char * argv [])
             case'10':
                 break;
             case '11':
-                system (EXIT_SUCCESS);
                 break;
         }
     }
