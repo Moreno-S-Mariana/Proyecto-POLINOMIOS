@@ -29,7 +29,8 @@ void menu ()
     printf("\t Selecciona primero el polinomio y despues el binomio de la forma x+a \n");
     printf("8. Escribir en pantalla  \n");
     printf("9. Escribir en un archivo \n");
-    printf("10. Salir");
+    printf("10. Ayuda")
+    printf("11. Salir");
 }
 
 /*

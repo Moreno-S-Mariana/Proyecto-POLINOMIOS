@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "polinomio.h "
+#include "pol.h "
 
 int main(int argc, char * argv [])
 {
@@ -30,7 +30,9 @@ int main(int argc, char * argv [])
                 break;
             case '9':
                 break;
-            case '10':
+            case'10':
+                break;
+            case '11':
                 system (EXIT_SUCCESS);
                 break;
         }
