@@ -15,6 +15,8 @@ int main(int argc, char * argv [])
         switch(opmenu)
         {
             case'1':
+                void agregar_polinomio_del_teclado ();
+                void mostrar_polinomio (int i );
                 break;
             case '2':
                 break;

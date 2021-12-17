@@ -411,6 +411,7 @@ void agregar_polinomio_del_teclado ()
     {
         printf("Ya no hay memoria disponible");
     }
+    return p;
 }
 
 
@@ -492,6 +493,14 @@ void memory_write (polinomio p )
 void memory_read()
 {
 
+}
+
+void memory_delete ()
+{
+    if (memory.numPol <10 )
+    {
+        memory.numPol -- ;
+    }
 }
 
 
